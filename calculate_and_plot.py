@@ -37,7 +37,7 @@ def calculate_and_plot(n, p, temperature):
     plt.plot(xinter1, f2(xinter1), '--', color="thistle")
     plt.plot(xinter2, f2(xinter2), '--', color="thistle")
     plt.legend(['data points', 'your point: [%d, %f]' % (x1,f2(x1)), 'cubic interpolation', 'extrapolation'], loc='best')
-    plt.title('Excitation rate coefficients', fontdict=font)
+    plt.title('Excitation rate coefficients (n=%d, n\'=%d)' % (n, n+p), fontdict=font)
     plt.xlabel('temperature (K)', fontdict=font)
     plt.ylabel(r'$K_{n;n + p}(T)$ ($10^{-9} {cm}^{3}\,\,{s}^{-1}$)', fontdict=font)
 
