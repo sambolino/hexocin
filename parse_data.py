@@ -35,18 +35,11 @@ def main():
     database = r"/mixing_agn.db"
     conn = create_connection(database)
 
-    sql_create_table = """ CREATE TABLE IF NOT EXISTS data_points (
-                                        d integer NOT NULL,
-                                        p integer NOT NULL,
-                                        data text NOT NULL
-                                    ); """
-
     if conn is not None:
-        create_table(conn, sql_create_table)
+        create_table(conn)
 
     with conn:
         for dic in list_of_dicts:
-            #print(dic)
             populate_table(conn, (dic['n'], dic['p'], ','.join(map(str, dic['data']))))
 
 if __name__ == '__main__':
