@@ -9,7 +9,7 @@ def chunks(l, n):
     return (l[i:i+n] for i in range(0, len(l), n))
 
 def main():
-    f = open("Supporting_info.txt")
+    f = open("data/Supporting_info.txt")
 
     all_lines = f.readlines()
     selected_lines = []
@@ -32,7 +32,7 @@ def main():
             list_of_dicts.append(dic)
 
     #print(list_of_dicts)
-    database = r"/mixing_agn.db"
+    database = r"data/mixing_agn.db"
     conn = create_connection(database)
 
     if conn is not None:

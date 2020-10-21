@@ -22,14 +22,14 @@ def create_table(conn):
     :param create_table_sql: a CREATE TABLE statement
     :return:
     """
-    sql_create_table = """ CREATE TABLE IF NOT EXISTS data_points (
+    sql = """ CREATE TABLE IF NOT EXISTS data_points (
                                     n integer NOT NULL,
                                     p integer NOT NULL,
                                     data text NOT NULL
                                 ); """
     try:
         c = conn.cursor()
-        c.execute(create_table_sql)
+        c.execute(sql)
     except Error as e:
         print(e)
 
@@ -54,6 +54,6 @@ def select_row(conn, n, nprim):
     :return:
     """
     cur = conn.cursor()
-    cur.execute("SELECT data FROM data_points where n=%d and p=%" % (n, nprim-n))
+    cur.execute("SELECT data FROM data_points where n=%d and p=%d" % (n, nprim-n))
 
     return cur.fetchone()[0]
