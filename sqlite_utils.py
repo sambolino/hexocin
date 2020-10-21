@@ -23,7 +23,7 @@ def create_table(conn):
     :return:
     """
     sql_create_table = """ CREATE TABLE IF NOT EXISTS data_points (
-                                    d integer NOT NULL,
+                                    n integer NOT NULL,
                                     p integer NOT NULL,
                                     data text NOT NULL
                                 ); """
@@ -40,7 +40,7 @@ def populate_table(conn, row):
     :param project:
     :return: project id
     """
-    sql = ''' INSERT INTO data_points(d,p,data)
+    sql = ''' INSERT INTO data_points(n,p,data)
               VALUES(?,?,?) '''
     cur = conn.cursor()
     cur.execute(sql, row)
