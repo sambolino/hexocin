@@ -56,4 +56,9 @@ def select_row(conn, n, p):
     cur = conn.cursor()
     cur.execute("SELECT data FROM data_points where n=%d and p=%d" % (n, p))
 
-    return cur.fetchone()[0]
+    query = cur.fetchone()
+
+    if query == None:
+        raise ValueError("Something went wrong, probably arguments out of range or the db isn't properly populated")
+
+    return query[0]

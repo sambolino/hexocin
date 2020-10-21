@@ -12,6 +12,7 @@ def calculate_and_plot(n, p, temperature):
     with conn:
         row = select_row(conn, n, p)
 
+    x1 = temperature
     x = np.array([2000., 3000,    5000,   7000,    8000,    9000,    10000,   15000,   20000,   25000,   30000])
     y = np.array([float(s) for s in row.split(",")])
     f = interp1d(x, y, fill_value="extrapolate")
