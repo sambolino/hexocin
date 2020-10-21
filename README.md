@@ -1,6 +1,6 @@
-# Mixing AGN
+# HEXOCIN
 
-## Excitation rate coefficients
+## (H)ydrogen (EX)citation (CO)efficent (IN)terpolation
 We give calculated excitation rate coefficients K n; n+p (T) for H*(n) + H(1s) collisions for principal
 quantum number n between 4 and 20 (4 ≤ n ≤ 20) and 2 000 K ≤ T≤ 30 000 K where 1 ≤ p ≤ 5
 (n’=n+p). The data for excitation coefficients were collected i.e. obtained by quantum
@@ -16,7 +16,7 @@ The database is already generated with the parse_data.py script.
 
 To run the main program:
 ```bash
-python3 mixing_agn.py [-h] -n N -p P -t TEMP
+python3 hexocin.py [-h] -n N -p P -t TEMP
 ```
 where N is Principal quantum number, P is transition from n to n' and TEMP is temperature. Arguments should be integers with [4,20], [1,5] and [2000,30000] ranges respectively.
 
