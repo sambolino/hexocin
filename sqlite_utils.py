@@ -47,13 +47,13 @@ def populate_table(conn, row):
     conn.commit()
     return cur.lastrowid
 
-def select_row(conn, n, nprim):
+def select_row(conn, n, p):
     """
     Return single row from data_points table
     :param conn: the Connection object
     :return:
     """
     cur = conn.cursor()
-    cur.execute("SELECT data FROM data_points where n=%d and p=%d" % (n, nprim-n))
+    cur.execute("SELECT data FROM data_points where n=%d and p=%d" % (n, p))
 
     return cur.fetchone()[0]

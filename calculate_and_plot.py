@@ -4,13 +4,13 @@ import numpy as np
 from scipy.interpolate import interp1d
 import matplotlib.pyplot as plt
 
-def calculate_and_plot(n, nprim, temperature):
+def calculate_and_plot(n, p, temperature):
 
     database = r"data/mixing_agn.db"
     conn = create_connection(database)
 
     with conn:
-        row = select_row(conn, n, nprim)
+        row = select_row(conn, n, p)
 
     x = np.array([2000., 3000,    5000,   7000,    8000,    9000,    10000,   15000,   20000,   25000,   30000])
     y = np.array([float(s) for s in row.split(",")])
