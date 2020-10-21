@@ -20,7 +20,7 @@ def _t_range(val):
 PARSER = argparse.ArgumentParser(description="", 
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-PARSER.add_argument("-n", "--n", type=_n_range, default=None, help="Quantum number (between 4 and 20)", required=True)
+PARSER.add_argument("-n", "--n", type=_n_range, default=None, help="Principal quantum number (between 4 and 20)", required=True)
 PARSER.add_argument("-p", "--p", type=_p_range, default=None, help="Transition from n to n' (between 1 and 5)", required=True)
 PARSER.add_argument("-t", "--temp", type=_t_range, default=None, help="Temperature (between 2000 and 50000)", required=True)
 ARGS = PARSER.parse_args()
